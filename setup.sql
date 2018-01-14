@@ -11,7 +11,7 @@ use finance; /* We will be using the database finance. */
 
 /* This table contains the allocation schemes. */
 create table schemes (
-    name Varchar(20),
+    name Varchar(50),
     scheme json,
     primary key (name));
 
@@ -21,7 +21,7 @@ create table transactions (
     quantity Decimal(7,2),
     txn_date Date,
     date_added Date,
-    scheme_name Varchar(20),
+    scheme_name Varchar(50),
     description Text,
     foreign key s_name (scheme_name) references schemes(name) on delete SET NULL,
     primary key(quantity, txn_date, sort)
