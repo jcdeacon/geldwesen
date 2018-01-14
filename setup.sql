@@ -1,3 +1,4 @@
+
 /* This file summarizes a finance database to allocate budgets based on
 incomes and expenses. 
  
