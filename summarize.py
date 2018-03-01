@@ -3,6 +3,7 @@ import ast
 
 result = {}
 
+# k is the category, n is the amount, i is true if it is income.
 def include(k, n, i):
     if i:
         if k in result:
@@ -15,6 +16,8 @@ def include(k, n, i):
         else:
             result[k] = -n
 
+# num is the amount, d is the scheme dictionary, prefix is where the
+# transaction goes, and i is true if it is income.
 def sort_txn(num, d, prefix, i):
     for key in d:
         new_prefix = prefix + (len(prefix)>0) * "." + key
@@ -38,5 +41,4 @@ for txn in data:
 
 for key in sorted(result):
     print key + ": " + str(result[key])
-
 
